@@ -11,28 +11,3 @@ root.render(
     <App />
   </Context>
 );
-
-
-const B = () => {
-  const sayHello = () => alert("Hello From B");
-  return null;
-};
-
-const A = () => {
-  const bRef = useRef(null); // Create a ref to hold the reference to component B
-
-  const callSayHello = () => {
-    if (bRef.current) {
-      bRef.current.sayHello();
-    }
-  };
-
-  return (
-    <div>
-      <B ref={bRef} />
-      <button onClick={callSayHello}>Call sayHello in B</button>
-    </div>
-  );
-};
-
-export default A;
