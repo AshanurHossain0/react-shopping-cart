@@ -17,7 +17,7 @@ const Header = () => {
                     <FormControl className='m-auto' placeholder='Seacrh product' style={{ width: 500 }} />
                 </Navbar.Text>
                 <Nav>
-                    <Dropdown alignLeft>
+                    <Dropdown menuAlign='' alignRight >
                         <Dropdown.Toggle variant='success'>
                             <FaShoppingCart color="white" fontSize="25px" style={{ marginRight: 5 }} />
                             <Badge>{cartItems.length}</Badge>

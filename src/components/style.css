@@ -56,6 +56,10 @@
     margin: 10px;
 }
 
+.summary{
+    width:30%;
+}
+
 @media (max-width: 771px) {
     .filters {
         width: 40%;
