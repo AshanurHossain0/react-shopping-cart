@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar, Container, FormControl, Nav, Dropdown, Badge,Button } from 'react-bootstrap'
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { CartState } from '../context/Context';
 
 const Header = () => {
+    
     const { state: { cartItems }, dispatch, filterDispatch} = CartState();
     return (
         <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
@@ -13,14 +14,7 @@ const Header = () => {
                 <Navbar.Brand>
                     <Link>Shopping Cart</Link>
                 </Navbar.Brand>
-                <Navbar.Text className='search'>
-                    <FormControl className='m-auto' placeholder='Seacrh product' style={{ width: 500 }} onChange={(e)=>{
-                        filterDispatch({
-                            type:"FILTER_BY_SEARCH",
-                            payload:e.target.value
-                        })
-                    }} />
-                </Navbar.Text>
+                
                 <Nav>
                     <Dropdown >
                         <Dropdown.Toggle variant='success'>
@@ -65,6 +59,14 @@ const Header = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                 </Nav>
+                <Navbar.Text className='search'>
+                    <FormControl className='m-auto' placeholder='Seacrh product' style={{ width: 500 }} onChange={(e)=>{
+                        filterDispatch({
+                            type:"FILTER_BY_SEARCH",
+                            payload:e.target.value
+                        })
+                    }} />
+                </Navbar.Text>
             </Container>
         </Navbar>
     )
